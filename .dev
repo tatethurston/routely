@@ -1,0 +1,7 @@
+PACKAGE_NAME
+PACKAGE_DISPLAY_NAME
+PACKAGE_DESCRIPTION
+
+find . -maxdepth 1 -type f | perl -pi -e 's/PACKAGE_NAME/FOO/g'
+find . -maxdepth 1 -type f | perl -pi -e 's/PACKAGE_DISPLAY_NAME/FOO/g'
+find . -maxdepth 1 -type f | perl -pi -e 's/PACKAGE_DESCRIPTION/FOO/g'
