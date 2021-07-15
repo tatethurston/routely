@@ -5,7 +5,7 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "module": "CommonJS",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "noEmitOnError": false,
     "outDir": "dist",
     "resolveJsonModule": true,
@@ -13,8 +13,8 @@
     "skipLibCheck": true,
     "sourceMap": false,
     "strict": true,
-    "target": "ES2015",
-    "declaration": true
+    "declaration": true,
+    "target": "ESNext"
   },
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*"]
 }
