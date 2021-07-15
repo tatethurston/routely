@@ -10,7 +10,9 @@
   },
   "main": "dist/index.js",
   "files": [
-    "dist/index.d.ts"
+    "dist/*",
+    "!test.d.ts",
+    "!test.js"
   ],
   "scripts": {
     "build": "yarn clean && yarn tsc && yarn webpack",
