@@ -19,6 +19,9 @@
 <a href="https://github.com/tatethurston/PACKAGE_NAME/actions/workflows/ci.yml">
   <img src="https://github.com/tatethurston/PACKAGE_NAME/actions/workflows/ci.yml/badge.svg">
 </a>
+<a href="https://codecov.io/gh/tatethurston/PACKAGE_NAME">
+  <img src="https://img.shields.io/codecov/c/github/tatethurston/PACKAGE_NAME/main.svg?style=flat-square">
+</a>
 
 ## What is this? 🧐
 

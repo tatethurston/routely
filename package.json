@@ -19,6 +19,7 @@
     "lint:fix": "prettier --write . && prettier-package-json --write '{,example/}package.json' && eslint --fix .",
     "package:prune": "find dist -name test.* | xargs rm",
     "test": "yarn jest",
+    "test:ci": "yarn test --coverage",
     "typecheck": "yarn tsc --noEmit"
   },
   "sideEffects": false,
@@ -31,6 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
     "babel-loader": "^8.2.2",
+    "codecov": "^3.8.3",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.1.0",
     "husky": "^4.3.0",
