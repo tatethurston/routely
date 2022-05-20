@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`escapeRegExp escapes / 1`] = `"\\\\/"`;
+
+exports[`escapeRegExp escapes /[foo] 1`] = `"\\\\/[foo]"`;
+
+exports[`escapeRegExp escapes /[foo]/[bar]/[baz] 1`] = `"\\\\/[foo]\\\\/[bar]\\\\/[baz]"`;
+
+exports[`escapeRegExp escapes /[foo]/bar/[baz] 1`] = `"\\\\/[foo]\\\\/bar\\\\/[baz]"`;
+
+exports[`escapeRegExp escapes /[foo]/bar/[baz]/foo/[bar] 1`] = `"\\\\/[foo]\\\\/bar\\\\/[baz]\\\\/foo\\\\/[bar]"`;
+
+exports[`escapeRegExp escapes /[foo]/baz 1`] = `"\\\\/[foo]\\\\/baz"`;
+
+exports[`escapeRegExp escapes /_app 1`] = `"\\\\/_app"`;
+
+exports[`escapeRegExp escapes /_debug 1`] = `"\\\\/_debug"`;
+
+exports[`escapeRegExp escapes /_debug/health-check 1`] = `"\\\\/_debug\\\\/health-check"`;
+
+exports[`escapeRegExp escapes /_document 1`] = `"\\\\/_document"`;
+
+exports[`escapeRegExp escapes /_error 1`] = `"\\\\/_error"`;
+
+exports[`escapeRegExp escapes /_error/ 1`] = `"\\\\/_error\\\\/"`;
+
+exports[`escapeRegExp escapes /404 1`] = `"\\\\/404"`;
+
+exports[`escapeRegExp escapes /api/[...segments] 1`] = `"\\\\/api\\\\/[...segments]"`;
+
+exports[`escapeRegExp escapes /api/[[...segments]] 1`] = `"\\\\/api\\\\/[[...segments]]"`;
+
+exports[`escapeRegExp escapes /api/bar 1`] = `"\\\\/api\\\\/bar"`;
+
+exports[`escapeRegExp escapes /foo/[slug] 1`] = `"\\\\/foo\\\\/[slug]"`;
+
+exports[`escapeRegExp escapes /not-found 1`] = `"\\\\/not-found"`;
+
+exports[`escapeRegExp escapes /settings/ 1`] = `"\\\\/settings\\\\/"`;
+
+exports[`escapeRegExp escapes /settings/bars/[bar] 1`] = `"\\\\/settings\\\\/bars\\\\/[bar]"`;
+
+exports[`escapeRegExp escapes /settings/bars/[bar]/baz 1`] = `"\\\\/settings\\\\/bars\\\\/[bar]\\\\/baz"`;
+
+exports[`escapeRegExp escapes /settings/foo 1`] = `"\\\\/settings\\\\/foo"`;
+
+exports[`getPathRegex escapes / 1`] = `/\\^\\\\/\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /[foo] 1`] = `/\\^\\\\/\\(\\?<foo>\\[\\^/\\]\\+\\)\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /[foo]/[bar]/[baz] 1`] = `/\\^\\\\/\\(\\?<foo>\\[\\^/\\]\\+\\)\\\\/\\(\\?<bar>\\[\\^/\\]\\+\\)\\\\/\\(\\?<baz>\\[\\^/\\]\\+\\)\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /[foo]/bar/[baz] 1`] = `/\\^\\\\/\\(\\?<foo>\\[\\^/\\]\\+\\)\\\\/bar\\\\/\\(\\?<baz>\\[\\^/\\]\\+\\)\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /[foo]/bar/[baz]/foo/[bar] 1`] = `/\\^\\\\/\\(\\?<foo>\\[\\^/\\]\\+\\)\\\\/bar\\\\/\\(\\?<baz>\\[\\^/\\]\\+\\)\\\\/foo\\\\/\\(\\?<bar>\\[\\^/\\]\\+\\)\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /[foo]/baz 1`] = `/\\^\\\\/\\(\\?<foo>\\[\\^/\\]\\+\\)\\\\/baz\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /_app 1`] = `/\\^\\\\/_app\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /_debug 1`] = `/\\^\\\\/_debug\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /_debug/health-check 1`] = `/\\^\\\\/_debug\\\\/health-check\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /_document 1`] = `/\\^\\\\/_document\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /_error 1`] = `/\\^\\\\/_error\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /_error/ 1`] = `/\\^\\\\/_error\\\\/\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /404 1`] = `/\\^\\\\/404\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /api/[...segments] 1`] = `/\\^\\\\/api\\\\/\\(\\?<segments>\\.\\+\\)\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /api/[[...segments]] 1`] = `/\\^\\\\/api\\(\\?<segments>\\.\\*\\)\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /api/bar 1`] = `/\\^\\\\/api\\\\/bar\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /foo/[slug] 1`] = `/\\^\\\\/foo\\\\/\\(\\?<slug>\\[\\^/\\]\\+\\)\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /not-found 1`] = `/\\^\\\\/not-found\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /settings/ 1`] = `/\\^\\\\/settings\\\\/\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /settings/bars/[bar] 1`] = `/\\^\\\\/settings\\\\/bars\\\\/\\(\\?<bar>\\[\\^/\\]\\+\\)\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /settings/bars/[bar]/baz 1`] = `/\\^\\\\/settings\\\\/bars\\\\/\\(\\?<bar>\\[\\^/\\]\\+\\)\\\\/baz\\\\/\\*\\$/`;
+
+exports[`getPathRegex escapes /settings/foo 1`] = `/\\^\\\\/settings\\\\/foo\\\\/\\*\\$/`;

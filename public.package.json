@@ -9,10 +9,15 @@
     "url": "https://github.com/tatethurston/routely"
   },
   "main": "index.js",
+  "bin": {
+    "routely": "cli.js"
+  },
   "module": "module",
   "sideEffects": false,
   "types": "index.d.ts",
-  "dependencies": {},
+  "peerDependencies": {
+    "prettier": "^2.1.1"
+  },
   "keywords": [],
   "exports": {
     "./package.json": "./package.json",
