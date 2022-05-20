@@ -1,4 +1,4 @@
-import { getQueryType } from "./utils";
+import { getRoutes, getQueryType } from "./utils";
 
 /**
  * Escapes RegExp control characters from a path segment
@@ -49,5 +49,54 @@ export function getMatch(pathname: string): Match {
       return acc;
     }, {});
     return { match: true, params };
+  };
+}
+
+interface Route {
+  pathname: string;
+  query: Record<string, string | string[]> | unknown;
+}
+
+type Manifest = Record<string, unknown>;
+
+type RouteMatcher = Record<string, Route & { match: Match }>;
+
+interface RouteMatch<R extends Route, M extends Manifest> {
+  handler: M[string];
+  pathname: R["pathname"];
+  params: R["query"];
+}
+
+interface Router<R extends Route, M extends Manifest> {
+  match: (path: string) => RouteMatch<R, M> | undefined;
+}
+
+export function Router<R extends Route, M extends Manifest>(
+  manifest: M
+): Router<R, M> {
+  const filepaths = Object.keys(manifest);
+  const routes = getRoutes(filepaths);
+  const router = routes.reduce<RouteMatcher>((acc, route) => {
+    acc[route.pathname] = {
+      ...route,
+      match: getMatch(route.pathname),
+    };
+    return acc;
+  }, {});
+
+  return {
+    match: (path) => {
+      for (const route of routes) {
+        const re = router[route.pathname].match(path);
+        if (re.match) {
+          return {
+            handler: manifest[route.filepath] as M[string],
+            pathname: route.pathname,
+            params: re.params,
+          };
+        }
+      }
+      return undefined;
+    },
   };
 }

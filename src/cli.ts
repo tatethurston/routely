@@ -2,8 +2,8 @@
 
 import { writeFileSync } from "fs";
 import { join } from "path";
-import { ROUTES_DIRECTORY_NAME, findFiles, isTS } from "./utils";
-import { getRoutes, generate } from "./codegen";
+import { getRoutes, ROUTES_DIRECTORY_NAME, findFiles, isTS } from "./utils";
+import { generate } from "./codegen";
 
 const NEXTJS_PAGES_DIRECTORY = join(".", ROUTES_DIRECTORY_NAME);
 

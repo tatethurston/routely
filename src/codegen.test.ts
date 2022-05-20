@@ -1,129 +1,6 @@
-import { generate, getRoutes } from "./codegen";
+import { generate } from "./codegen";
 import { filepaths } from "./test-utils";
-
-describe("getRoutes", () => {
-  it("processes and orders route filepaths", () => {
-    expect(getRoutes(filepaths)).toMatchInlineSnapshot(`
-      Array [
-        Object {
-          "filepath": "routes/index.ts",
-          "pathname": "/",
-          "query": Object {},
-        },
-        Object {
-          "filepath": "routes/404.ts",
-          "pathname": "/404",
-          "query": Object {},
-        },
-        Object {
-          "filepath": "routes/_error/index.ts",
-          "pathname": "/_error/",
-          "query": Object {},
-        },
-        Object {
-          "filepath": "routes/not-found.ts",
-          "pathname": "/not-found",
-          "query": Object {},
-        },
-        Object {
-          "filepath": "routes/settings/index.ts",
-          "pathname": "/settings/",
-          "query": Object {},
-        },
-        Object {
-          "filepath": "routes/_debug/health-check.ts",
-          "pathname": "/_debug/health-check",
-          "query": Object {},
-        },
-        Object {
-          "filepath": "routes/api/bar.ts",
-          "pathname": "/api/bar",
-          "query": Object {},
-        },
-        Object {
-          "filepath": "routes/settings/foo.ts",
-          "pathname": "/settings/foo",
-          "query": Object {},
-        },
-        Object {
-          "filepath": "routes/settings/bars/[bar].ts",
-          "pathname": "/settings/bars/[bar]",
-          "query": Object {
-            "bar": "dynamic",
-          },
-        },
-        Object {
-          "filepath": "routes/settings/bars/[bar]/baz.ts",
-          "pathname": "/settings/bars/[bar]/baz",
-          "query": Object {
-            "bar": "dynamic",
-          },
-        },
-        Object {
-          "filepath": "routes/foo/[slug].ts",
-          "pathname": "/foo/[slug]",
-          "query": Object {
-            "slug": "dynamic",
-          },
-        },
-        Object {
-          "filepath": "routes/api/[...segments].ts",
-          "pathname": "/api/[...segments]",
-          "query": Object {
-            "segments": "catch-all",
-          },
-        },
-        Object {
-          "filepath": "routes/api/[[...segments]].ts",
-          "pathname": "/api/[[...segments]]",
-          "query": Object {
-            "segments": "optional-catch-all",
-          },
-        },
-        Object {
-          "filepath": "routes/[foo].ts",
-          "pathname": "/[foo]",
-          "query": Object {
-            "foo": "dynamic",
-          },
-        },
-        Object {
-          "filepath": "routes/[foo]/baz.ts",
-          "pathname": "/[foo]/baz",
-          "query": Object {
-            "foo": "dynamic",
-          },
-        },
-        Object {
-          "filepath": "routes/[foo]/bar/[baz].ts",
-          "pathname": "/[foo]/bar/[baz]",
-          "query": Object {
-            "baz": "dynamic",
-            "foo": "dynamic",
-          },
-        },
-        Object {
-          "filepath": "routes/[foo]/bar/[baz]/foo/[bar].ts",
-          "pathname": "/[foo]/bar/[baz]/foo/[bar]",
-          "query": Object {
-            "bar": "dynamic",
-            "baz": "dynamic",
-            "foo": "dynamic",
-          },
-        },
-        Object {
-          "filepath": "routes/[foo]/[bar]/[baz].ts",
-          "pathname": "/[foo]/[bar]/[baz]",
-          "query": Object {
-            "bar": "dynamic",
-            "baz": "dynamic",
-            "foo": "dynamic",
-          },
-        },
-      ]
-    `);
-  });
-});
+import { getRoutes } from "./utils";
 
 describe("generate", () => {
   it("writes routes", async () => {
@@ -141,6 +18,22 @@ describe("generate", () => {
         },
         {
           pathname: \\"/404\\";
+          query: never;
+        },
+        {
+          pathname: \\"/_app\\";
+          query: never;
+        },
+        {
+          pathname: \\"/_debug\\";
+          query: never;
+        },
+        {
+          pathname: \\"/_document\\";
+          query: never;
+        },
+        {
+          pathname: \\"/_error\\";
           query: never;
         },
         {
@@ -217,6 +110,22 @@ describe("generate", () => {
         {
           pathname: \\"/404\\",
           loader: () => import(\\"./routes/404.ts\\"),
+        },
+        {
+          pathname: \\"/_app\\",
+          loader: () => import(\\"./routes/_app.ts\\"),
+        },
+        {
+          pathname: \\"/_debug\\",
+          loader: () => import(\\"./routes/_debug.ts\\"),
+        },
+        {
+          pathname: \\"/_document\\",
+          loader: () => import(\\"./routes/_document.ts\\"),
+        },
+        {
+          pathname: \\"/_error\\",
+          loader: () => import(\\"./routes/_error.ts\\"),
         },
         {
           pathname: \\"/_error/\\",

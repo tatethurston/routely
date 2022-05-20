@@ -62,3 +62,42 @@ export function routeFromFilepath(file: string): string {
     .replace(parse(file).ext, "")
     .replace(/index$/, "");
 }
+
+const segmentOrder = ["static", "dynamic", "catch-all", "optional-catch-all"];
+
+export function getRoutes(files: string[]): Route[] {
+  return files
+    .map((file) => {
+      const pathname = routeFromFilepath(file);
+      const query = getQueryType(pathname);
+
+      return {
+        filepath: file,
+        pathname,
+        query,
+      };
+    })
+    .sort((a, b) => {
+      const aSegments = a.pathname.split("/").filter(Boolean);
+      const bSegments = b.pathname.split("/").filter(Boolean);
+      for (let idx = 0; idx <= aSegments.length; idx++) {
+        if (idx >= aSegments.length && idx >= bSegments.length) {
+          return 0;
+        } else if (idx >= aSegments.length) {
+          return -1;
+        } else if (idx >= bSegments.length) {
+          return 1;
+        }
+        const a = segmentOrder.indexOf(getSegmentType(aSegments[idx]));
+        const b = segmentOrder.indexOf(getSegmentType(bSegments[idx]));
+        if (a < b) {
+          return -1;
+        }
+        if (a > b) {
+          return 1;
+        }
+      }
+      // istanbul ignore next: unreachable
+      return 0;
+    });
+}
