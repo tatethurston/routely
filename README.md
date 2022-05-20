@@ -7,7 +7,7 @@
 <a href="https://www.npmjs.com/package/routely">
   <img src="https://img.shields.io/npm/v/routely.svg">
 </a>
-<a href="https://github.com/tatethurston/routely/blob/master/LICENSE">
+<a href="https://github.com/tatethurston/routely/blob/main/LICENSE">
   <img src="https://img.shields.io/npm/l/routely.svg">
 </a>
 <a href="https://bundlephobia.com/result?p=routely">
@@ -42,8 +42,8 @@ Coming Soon!
 
 ## Contributing 👫
 
-PR's and issues welcomed! For more guidance check out [CONTRIBUTING.md](https://github.com/tatethurston/routely/blob/master/CONTRIBUTING.md)
+PR's and issues welcomed! For more guidance check out [CONTRIBUTING.md](https://github.com/tatethurston/routely/blob/main/CONTRIBUTING.md)
 
 ## Licensing 📃
 
-See the project's [MIT License](https://github.com/tatethurston/routely/blob/master/LICENSE).
+See the project's [MIT License](https://github.com/tatethurston/routely/blob/main/LICENSE).
