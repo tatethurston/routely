@@ -9,12 +9,12 @@
     "noEmitOnError": false,
     "outDir": "dist",
     "resolveJsonModule": true,
-    "rootDir": "src",
+    "rootDir": ".",
     "skipLibCheck": true,
     "sourceMap": false,
     "strict": true,
     "declaration": true,
     "target": "ESNext"
   },
-  "include": ["src/**/*"]
+  "include": ["src", "example"]
 }

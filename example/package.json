@@ -1,0 +1,12 @@
+{
+  "name": "routely-example",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "routely": "file:../dist"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
