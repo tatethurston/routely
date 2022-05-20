@@ -67,11 +67,11 @@ interface RouteMatch<R extends Route, M extends Manifest> {
   params: R["query"];
 }
 
-interface Router<R extends Route, M extends Manifest> {
+export interface Router<R extends Route, M extends Manifest> {
   match: (path: string) => RouteMatch<R, M> | undefined;
 }
 
-export function Router<R extends Route, M extends Manifest>(
+export function router<R extends Route, M extends Manifest>(
   manifest: M
 ): Router<R, M> {
   const filepaths = Object.keys(manifest);

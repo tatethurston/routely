@@ -1,1 +1,1 @@
-export { Router } from "./runtime";
+export { router } from "./runtime";

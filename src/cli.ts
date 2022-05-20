@@ -2,13 +2,14 @@
 
 import { writeFileSync } from "fs";
 import { join } from "path";
-import { getRoutes, ROUTES_DIRECTORY_NAME, findFiles, isTS } from "./utils";
+import { getRoutes, findFiles, isTS } from "./utils";
 import { generate } from "./codegen";
 
-const NEXTJS_PAGES_DIRECTORY = join(".", ROUTES_DIRECTORY_NAME);
+const ROUTES_DIRECTORY_NAME = "routes";
+const ROUTES_DIRECTORY = join(".", ROUTES_DIRECTORY_NAME);
 
 async function main(): Promise<void> {
-  const files = findFiles(NEXTJS_PAGES_DIRECTORY);
+  const files = findFiles(ROUTES_DIRECTORY);
   const routes = getRoutes(files);
   const ext = isTS(routes) ? ".ts" : ".js";
 

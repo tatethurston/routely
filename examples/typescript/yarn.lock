@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"routely@file:../dist":
+"routely@file:../../dist":
   version "0.0.1"
 
 typescript@^4.6.4:

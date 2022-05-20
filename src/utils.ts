@@ -3,8 +3,6 @@ import { join, parse } from "path";
 
 const DYNAMIC_SEGMENT_RE = /\[(.*?)\]/g;
 
-export const ROUTES_DIRECTORY_NAME = "routes";
-
 // istanbul ignore next: too much mocking to be valuable
 export function findFiles(entry: string): string[] {
   return readdirSync(entry).flatMap((file) => {
@@ -57,10 +55,7 @@ export function getQueryType(path: string): Record<string, QueryType> {
 }
 
 export function routeFromFilepath(file: string): string {
-  return file
-    .replace(ROUTES_DIRECTORY_NAME, "")
-    .replace(parse(file).ext, "")
-    .replace(/index$/, "");
+  return file.replace(parse(file).ext, "").replace(/index$/, "");
 }
 
 const segmentOrder = ["static", "dynamic", "catch-all", "optional-catch-all"];

@@ -1,4 +1,4 @@
-import { Router, getMatch, escapeUrlPathRegExp, getPathRegex } from "./runtime";
+import { router, getMatch, escapeUrlPathRegExp, getPathRegex } from "./runtime";
 import { routes } from "./test-utils";
 
 describe("escapeRegExp", () => {
@@ -221,10 +221,10 @@ describe("getMatch", () => {
 
 describe("Router", () => {
   it(".match", () => {
-    const path = "routes/foo/[foo].ts";
+    const filepath = "/foo/[foo].ts";
     const handler = jest.fn();
-    const router = Router({ [path]: handler });
-    expect(router.match("/foo/1")).toEqual({
+    const r = router({ [filepath]: handler });
+    expect(r.match("/foo/1")).toEqual({
       handler,
       params: {
         foo: "1",

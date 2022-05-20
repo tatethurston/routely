@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "index.js",
   "dependencies": {
-    "routely": "file:../dist"
+    "routely": "file:../../dist"
   },
   "devDependencies": {
     "typescript": "^4.6.4"
