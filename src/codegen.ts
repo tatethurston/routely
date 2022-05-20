@@ -43,6 +43,7 @@ export function getRoutes(files: string[]): Route[] {
           return 1;
         }
       }
+      // istanbul ignore next: unreachable
       return 0;
     });
 }
@@ -149,6 +150,7 @@ ${routes
       parser: isTS ? "typescript" : "babel",
     });
   } catch (e) {
+    // istanbul ignore next
     console.warn(e);
   }
 

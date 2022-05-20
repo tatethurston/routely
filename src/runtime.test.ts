@@ -212,5 +212,9 @@ describe("getMatch", () => {
         slug: [],
       },
     });
+    expect(match("/foo/")).toEqual({
+      match: false,
+      params: {},
+    });
   });
 });
